@@ -96,5 +96,31 @@ def draw_rounded_rectangle(x, y, width, height, corner_radius, color)
   draw_filled_arc2(x+dx,y-dy+height,corner_radius,-90,-180,color)
 end
 
+#8:
+def basic_layout
+
+  #back ground
+  Gosu.draw_quad(
+    0, 0, Gosu::Color::WHITE,
+    width, 0, Gosu::Color::GRAY,
+    width, height, Gosu::Color::BLACK,
+    0, height, Gosu::Color::BLACK,
+    z = 0, mode = :default
+  )
+
+  draw_rounded_rectangle(10,10,width/2-10,height/2-10,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(width/2+20,10,width/4-30,height/4-30,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(3*width/4+10,10,width/4-30,height/4-30,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(width/2+20,height/4,width/2-40,height/4,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(10,height/2+20,width/4-10,height/2-40,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(width/4+20,height/2+20,width/2-30,height/2-40,10,Gosu::Color::GRAY)
+
+  draw_rounded_rectangle(3*width/4+10,height/2+20,width/4-30,height/2-40,10,Gosu::Color::GRAY)
+end
 
 ###
