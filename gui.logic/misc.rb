@@ -36,6 +36,24 @@ def draw_filled_arc(x, y, radius, start_angle, end_angle, color)
   angle_increment = (end_angle - start_angle) / num_segments.to_f
 
   num_segments.times do |i|
+    angle1 = start_angle - i * angle_increment
+    angle2 = start_angle - (i + 1) * angle_increment
+
+    x1 = x + radius * Math.cos(angle1 * Math::PI / 180)
+    y1 = y - radius * Math.sin(angle1 * Math::PI / 180)
+    x2 = x + radius * Math.cos(angle2 * Math::PI / 180)
+    y2 = y - radius * Math.sin(angle2 * Math::PI / 180)
+
+    Gosu.draw_quad(x, y, color, x1, y1, color, x2, y2, color, x, y, color)
+  end
+end
+
+#6: Opposite Version
+def draw_filled_arc2(x, y, radius, start_angle, end_angle, color)
+  num_segments = 30
+  angle_increment = (end_angle - start_angle) / num_segments.to_f
+
+  num_segments.times do |i|
     angle1 = start_angle + i * angle_increment
     angle2 = start_angle + (i + 1) * angle_increment
 
@@ -59,7 +77,24 @@ def lighter_color(color, percent)
   lighter
 end
 
+#7:
+def draw_rounded_rectangle(x, y, width, height, corner_radius, color)
+  draw_rect(x,y,width,height,color)
 
+  dx = 5
+  dy = 5
+
+  draw_rect(x+dx-corner_radius,y+dy,corner_radius-dx,height-2*dy,color)
+  draw_rect(x+width,y+dy,corner_radius-dx,height-2*dy,color)
+
+  draw_rect(x,y+dy-corner_radius,width-dx,corner_radius-dy,color)
+  draw_rect(x,y+height,width-dx,corner_radius-dy,color)
+
+  draw_filled_arc2(x+dx,y+dy,corner_radius,180,90,color)
+  draw_filled_arc2(x-dx+width,y+dy,corner_radius,90,0,color)
+  draw_filled_arc2(x-dx+width,y-dy+height,corner_radius,0,-90,color)
+  draw_filled_arc2(x+dx,y-dy+height,corner_radius,-90,-180,color)
+end
 
 
 ###

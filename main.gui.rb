@@ -2,6 +2,8 @@
 require 'gosu'
 require_relative 'require'
 
+$onbutton_on_fn = -> {puts "ON"}
+$onbutton_off_fn = -> {puts "OFF"}
 
 class Synth < Gosu::Window
   def initialize
@@ -12,6 +14,8 @@ class Synth < Gosu::Window
     @font = Gosu::Font.new(20)
 
     @rknob = create_rknob(width / 2, height / 2, 50,0.0, RKnobTypes::LeftKnob, 25)
+
+    @onbutton = create_onbutton(width/2,height/2,$onbutton_on_fn,$onbutton_off_fn)
     @dragging = false
   end
 
@@ -27,7 +31,8 @@ class Synth < Gosu::Window
       z = 0, mode = :default
     )
 
-    rknob_draw(@rknob)
+    #rknob_draw(@rknob)
+    #onbutton_draw(@onbutton)
   end
 
   def update
@@ -39,6 +44,7 @@ class Synth < Gosu::Window
     puts "Key code pressed: #{id}"
     if id == Gosu::MS_LEFT
       @dragging = rknob_start_drag(@rknob, mouse_x, mouse_y)
+      onbutton_clicked?(@onbutton,mouse_x,mouse_y)
     end
   end
 
