@@ -108,17 +108,33 @@ def basic_layout
     z = 0, mode = :default
   )
 
+  dark_gray = Gosu::Color.new(40, 40, 40)
+
   draw_rounded_rectangle(10,10,width/2-10,height/2-10,10,Gosu::Color::GRAY)
+
+  draw_rect(15,40,width/2-25,height/2-50,dark_gray)
+
 
   draw_rounded_rectangle(width/2+20,10,width/4-30,height/4-30,10,Gosu::Color::GRAY)
 
+
   draw_rounded_rectangle(3*width/4+10,10,width/4-30,height/4-30,10,Gosu::Color::GRAY)
+
+  draw_rect(3*width/4+15,15,width/4-40,height/4-40,dark_gray)
+
 
   draw_rounded_rectangle(width/2+20,height/4,width/2-40,height/4,10,Gosu::Color::GRAY)
 
+  draw_rect(width/2+25,height/4+5,width/2-50,height/4-10,dark_gray)
+
+
   draw_rounded_rectangle(10,height/2+20,width/4-10,height/2-40,10,Gosu::Color::GRAY)
 
+
   draw_rounded_rectangle(width/4+20,height/2+20,width/2-30,height/2-40,10,Gosu::Color::GRAY)
+
+  draw_rect(width/4+25,height/2+50,width/2-40,height/2-80,dark_gray)
+
 
   draw_rounded_rectangle(3*width/4+10,height/2+20,width/4-30,height/2-40,10,Gosu::Color::GRAY)
 end
