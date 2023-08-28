@@ -17,6 +17,8 @@ class Synth < Gosu::Window
 
     @rknob = create_rknob(width / 2, height / 2, 50,0.0, RKnobTypes::LeftKnob, 25)
 
+    @textchooser = create_textchooser2(50,height/2+100,100,50,"temp",0,{"temp"=>0,"test"=>5})
+
     @onbutton = create_onbutton(width/2,height/2,$onbutton_on_fn,$onbutton_off_fn)
     @dragging = false
   end
@@ -26,6 +28,7 @@ class Synth < Gosu::Window
 
     basic_layout()
 
+    textchooser_draw_options(@textchooser)
     #rknob_draw(@rknob)
     #onbutton_draw(@onbutton)
   end
