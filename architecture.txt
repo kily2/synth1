@@ -4,12 +4,99 @@
 
 
   Oscillators:
-    1. Wavetable
-    2. Granular
-    3. Fractal
-    4. Physical Modeling
+  1. Wavetable Oscillator:
+Wavetable oscillators generate sound by cycling through a series of predefined waveforms.
+
+Parameters:
+
+    Waveform Selection: A dropdown or knob to select the current waveform from the wavetable.
+    Waveform Position: A knob/slider to control the position in the wavetable.
+    Frequency: A knob/slider to adjust the frequency of the oscillator.
+    Detune: A knob/slider to introduce detuning for creating richer textures.
+    Octave: A knob/slider to shift the pitch up or down by octaves.
+    Fine-Tune: A knob/slider for fine-tuning the pitch.
+    Modulation Depth: A knob/slider to control how much modulation affects the wavetable position.
+    Modulation Source: A dropdown or button to select the modulation source (LFO, envelope, etc.).
+    Modulation Rate: A knob/slider to set the modulation rate.
+    Amplitude Envelope: Parameters for controlling the attack, decay, sustain, and release of the sound.
+
+2. Granular Oscillator:
+Granular oscillators create sound by playing back tiny grains of audio samples.
+
+Parameters:
+
+    Sample Selection: A dropdown or browser to select the sample.
+    Grain Size: A knob/slider to set the length of each grain.
+    Grain Density: A knob/slider to control how often grains are played back.
+    Position Randomization: A knob/slider to introduce randomness to grain position.
+    Pitch Shift: A knob/slider to adjust the pitch of the grains.
+    Playback Speed: A knob/slider to control the speed of playback.
+    Crossfade: A knob/slider to adjust the crossfade between grains for smoother transitions.
+    Modulation Depth: A knob/slider for controlling modulation on parameters like grain size and pitch.
+    Modulation Source: A dropdown or button to select the modulation source.
+    Modulation Rate: A knob/slider to set the modulation rate.
+    Amplitude Envelope: Parameters for controlling the envelope of each grain.
+
+3. Fractal Oscillator:
+Fractal oscillators generate sound using fractal algorithms, resulting in evolving and complex timbres.
+
+Parameters:
+
+    Fractal Type: A dropdown or selector to choose the type of fractal algorithm.
+    Iterations: A knob/slider to set the number of iterations for the fractal generation.
+    Modulation Depth: A knob/slider for controlling modulation on fractal parameters.
+    Modulation Source: A dropdown or button to select the modulation source.
+    Modulation Rate: A knob/slider to set the modulation rate.
+    Frequency: A knob/slider to adjust the base frequency of the oscillator.
+    Color Mapping: Parameters for mapping fractal values to sound characteristics.
+    Amplitude Envelope: Parameters for controlling the amplitude envelope.
+
+4. Physical Modeling Oscillator:
+Physical modeling oscillators simulate the behavior of real-world acoustic instruments.
+
+Parameters:
+
+    Instrument Type: A dropdown or selector to choose the type of instrument to model (e.g., string, percussion).
+    Excitation: Parameters for controlling how the instrument is excited (pluck, bow, strike, etc.).
+    Material Properties: Parameters simulating the physical properties of the instrument (tension, damping, etc.).
+    Resonances: Parameters for controlling the resonances and modes of the instrument.
+    Modulation Depth: A knob/slider for controlling modulation on physical modeling parameters.
+    Modulation Source: A dropdown or button to select the modulation source.
+    Modulation Rate: A knob/slider to set the modulation rate.
+    Amplitude Envelope: Parameters for controlling the amplitude envelope.
+
+    ======================
 
   Env\LFO\PB
+
+  Envelope (ENV) Parameters:
+Envelopes shape the amplitude of a sound over time, defining how it starts, sustains, and fades out.
+
+Parameters:
+
+    Attack Time: A knob/slider to control how quickly the sound reaches its maximum level after a key press.
+    Decay Time: A knob/slider to control the time it takes for the sound to decay from the peak to the sustain level.
+    Sustain Level: A knob/slider to set the level at which the sound remains as long as a key is held.
+    Release Time: A knob/slider to control the time it takes for the sound to fade out after releasing a key.
+    Curve/Shape: A selector to choose between linear, exponential, or other envelope shapes.
+    Velocity Sensitivity: A knob/slider to adjust how much the envelope responds to the velocity of the key press.
+    Trigger Mode: A selector to choose between single-trigger (restart envelope on each key press) or multi-trigger (allow multiple envelopes to overlap).
+    Retrigger: A button/switch to force the envelope to restart when a new note is played before the previous one has finished.
+
+Low-Frequency Oscillator (LFO) Parameters:
+LFOs generate periodic waveforms at frequencies below the audible range. They're used to modulate various parameters over time.
+
+Parameters:
+
+    Waveform Selection: A dropdown or selector to choose the LFO waveform (sine, triangle, square, sawtooth, etc.).
+    Frequency (Rate): A knob/slider to set the speed at which the LFO oscillates (usually in Hertz or milliseconds).
+    Phase Offset: A knob/slider to shift the phase of the LFO waveform.
+    Amplitude (Depth): A knob/slider to control the intensity of the modulation applied by the LFO.
+    Destination: A dropdown or selector to choose the parameter that the LFO modulates (pitch, filter cutoff, amplitude, etc.).
+    Sync: A button/switch to synchronize the LFO rate to the tempo of the music.
+    Fade In/Out: Knobs/sliders to control how smoothly the LFO modulation starts and ends.
+    Key Sync: A button/switch to reset the LFO phase when a new key is pressed.
+    Retrigger: A button/switch to restart the LFO waveform cycle when a new note is played.
 
   ModMatrix
 
