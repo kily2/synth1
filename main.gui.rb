@@ -5,9 +5,11 @@ require_relative 'require'
 $onbutton_on_fn = -> {puts "ON"}
 $onbutton_off_fn = -> {puts "OFF"}
 
+
+
 class Synth < Gosu::Window
   def initialize
-    super(800, 600)  # Window dimensions
+    super(1200, 800)  # Window dimensions
     self.caption = "SynthApp"
 
     @input_text = ""
@@ -22,14 +24,7 @@ class Synth < Gosu::Window
   def draw
     #@font.draw_text(@input_text, 10, 10, 0,1 ,1,Gosu::Color::WHITE)
 
-
-    Gosu.draw_quad(
-      0, 0, Gosu::Color::WHITE,
-      width, 0, Gosu::Color::GREEN,
-      width, height, Gosu::Color::BLUE,
-      0, height, Gosu::Color::RED,
-      z = 0, mode = :default
-    )
+    basic_layout()
 
     #rknob_draw(@rknob)
     #onbutton_draw(@onbutton)
