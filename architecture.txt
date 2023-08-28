@@ -1,0 +1,37 @@
+
+
+###SYNTH OVERALL ARCHITECTURE
+
+
+  Oscillators:
+    1. Wavetable
+    2. Granular
+    3. Fractal
+    4. Physical Modeling
+
+  Env\LFO\PB
+
+  ModMatrix
+
+  EQ
+
+  XY PAD
+
+  Filter
+
+  Filter envelope
+
+  HP filter
+
+  Filter LFO
+
+  Amp envelope
+
+  Play mode
+
+  FX's
+
+
+
+
+###
