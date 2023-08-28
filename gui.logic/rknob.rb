@@ -31,7 +31,9 @@ def rknob_draw(rknob)
   #puts rknob_angle
   # Draw the modulation arc
   modulation_radius = rknob.radius * 1.4
-  draw_filled_arc(rknob.x, rknob.y, modulation_radius, 225, -45, lighter_color(Gosu::Color::BLUE,30))
+  draw_filled_arc2(rknob.x, rknob.y, modulation_radius, 225, -45, lighter_color(Gosu::Color::BLUE,30))
+
+  draw_filled_arc(rknob.x,rknob.y,modulation_radius,225,rknob_angle, (Gosu::Color::GREEN))
 
   # Draw the base circle
   base_circle_radius = rknob.radius * 1.25
@@ -96,19 +98,6 @@ def rknob_drag(rknob, mouse_x, mouse_y, dragging)
     rknob.value += (rknob.angle_step / 360.0)
     rknob.value = 1.0 if rknob.value > 1.0
   end
-end
-
-
-def rknob_drag2(rknob, mouse_x, mouse_y, dragging)
-  return unless dragging
-
-  angle_rad = Math.atan2(mouse_y - rknob.y, mouse_x - rknob.x)
-  adjusted_angle = (angle_rad * 180 / Math::PI + 360) % 360
-
-  angle_difference = adjusted_angle - rknob_value_to_angle(rknob)
-  rknob.value = (rknob.value + angle_difference / 360.0) % 1.0
-
-  rknob.value += angle_difference * rknob.angle_step / 360.0
 end
 
 
